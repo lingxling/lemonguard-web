@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/* ─── Design tokens ─────────────────────────────────────── */
+/* Dark = default */
+:root {
+  --bg:       #0E0F11;
+  --surface:  #17191C;
+  --surface2: #1F2226;
+  --border:   rgba(255,255,255,0.08);
+  --border2:  rgba(255,255,255,0.14);
+
+  --text:   #F2F3F5;
+  --text2:  rgba(242,243,245,0.62);
+  --text3:  rgba(242,243,245,0.42);
+  --text4:  rgba(242,243,245,0.28);
+
+  --amber:    #EAAA40;
+  --amber-s:  rgba(234,170,64,0.15);
+  --amber-xs: rgba(234,170,64,0.08);
+
+  --pass:  #51C672;
+  --pass-s: rgba(81,198,114,0.18);
+  --flag:  #EDB345;
+  --flag-s: rgba(237,179,69,0.18);
+  --fail:  #F75D59;
+  --fail-s: rgba(247,93,89,0.18);
+
+  --nav-blur-bg: rgba(14,15,17,0.90);
+  --hero-glow: rgba(234,170,64,0.10);
+  --hero-glow2: rgba(0,155,221,0.06);
+  --grid-lines: rgba(242,243,245,1);
+  --score-track: rgba(255,255,255,0.08);
+  --input-bg: rgba(255,255,255,0.04);
+  --photo-border: rgba(255,255,255,0.12);
+  --skip-text: rgba(242,243,245,0.40);
+}
+
+/* Light override */
+html.light {
+  --bg:       #F6F5F2;
+  --surface:  #FFFFFF;
+  --surface2: #EDECE7;
+  --border:   rgba(20,20,24,0.08);
+  --border2:  rgba(20,20,24,0.16);
+
+  --text:   #14161A;
+  --text2:  rgba(20,22,26,0.60);
+  --text3:  rgba(20,22,26,0.38);
+  --text4:  rgba(20,22,26,0.22);
+
+  --amber:    #D69727;
+  --amber-s:  rgba(214,151,39,0.15);
+  --amber-xs: rgba(214,151,39,0.07);
+
+  --pass:  #009342;
+  --pass-s: rgba(0,147,66,0.14);
+  --flag:  #B97600;
+  --flag-s: rgba(185,118,0,0.14);
+  --fail:  #CC272E;
+  --fail-s: rgba(204,39,46,0.14);
+
+  --nav-blur-bg: rgba(246,245,242,0.90);
+  --hero-glow: rgba(214,151,39,0.10);
+  --hero-glow2: rgba(0,120,179,0.06);
+  --grid-lines: rgba(20,20,24,1);
+  --score-track: rgba(20,20,24,0.08);
+  --input-bg: rgba(20,20,24,0.03);
+  --photo-border: rgba(20,20,24,0.12);
+  --skip-text: rgba(20,22,26,0.38);
+}
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-ibm-plex-mono);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.15s ease;
+}

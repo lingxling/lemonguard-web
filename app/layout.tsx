@@ -1,0 +1,73 @@
+import type { Metadata } from "next";
+import { Inter, IBM_Plex_Mono } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: "--font-ibm-plex-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: "LemonGuard — Used Car Inspection App",
+  description:
+    "Walk through 119 expert checks, score the car live, and generate a PDF report you can use to negotiate the price down. Available on iOS and Android.",
+  keywords: ["used car inspection", "car buying checklist", "vehicle inspection app", "pre-purchase inspection"],
+  openGraph: {
+    title: "LemonGuard — Used Car Inspection App",
+    description:
+      "Walk through 119 expert checks, score the car live, and generate a PDF report you can use to negotiate the price down.",
+    type: "website",
+    locale: "en_US",
+    siteName: "LemonGuard",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LemonGuard — Used Car Inspection App",
+    description: "119 expert checks. Live score. PDF report. Don't get burned buying a used car.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  name: "LemonGuard",
+  operatingSystem: "iOS, Android",
+  applicationCategory: "UtilitiesApplication",
+  description:
+    "A structured used-car inspection app. Walk through 119 expert checks, score the vehicle in real time, and export a PDF report to negotiate the price.",
+  offers: [
+    { "@type": "Offer", price: "0", priceCurrency: "USD", name: "First inspection free" },
+    { "@type": "Offer", price: "1.99", priceCurrency: "USD", name: "7-day access" },
+    { "@type": "Offer", price: "3.99", priceCurrency: "USD", name: "30-day access" },
+  ],
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className="font-sans antialiased">{children}</body>
+    </html>
+  );
+}
