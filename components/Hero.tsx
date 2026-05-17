@@ -110,6 +110,12 @@ function ScoreCard() {
         <span className="text-xs font-medium" style={{ color: "var(--text2)" }}>Est. repair cost</span>
         <span className="text-sm font-bold" style={{ color: "var(--amber)", fontFamily: "var(--font-ibm-plex-mono)" }}>$1,400&ndash;$2,100</span>
       </div>
+
+      {/* Frames the score as a recap of the user's own inputs, not a verdict. */}
+      <p className="text-[11px] leading-snug" style={{ color: "var(--text4)" }}>
+        The score reflects only the items you check and record — it is not an
+        appraisal of the car.
+      </p>
     </div>
   );
 }

@@ -66,8 +66,7 @@ function HubScreen() {
         <svg width="120" height="120" viewBox="0 0 120 120">
           <circle cx="60" cy="60" r="46" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="8" />
           <circle cx="60" cy="60" r="46" fill="none" stroke="#EAAA40" strokeWidth="8" strokeLinecap="round" strokeDasharray={circumference} strokeDashoffset={offset} transform="rotate(-90 60 60)" />
-          <text x="60" y="54" textAnchor="middle" fontSize="28" fontWeight="700" fill="#F2F3F5" fontFamily="var(--font-ibm-plex-mono)">B</text>
-          <text x="60" y="70" textAnchor="middle" fontSize="10" fill="rgba(242,243,245,0.45)" fontFamily="var(--font-ibm-plex-mono)">Good</text>
+          <text x="60" y="58" textAnchor="middle" fontSize="28" fontWeight="700" fill="#F2F3F5" fontFamily="var(--font-ibm-plex-mono)">B</text>
         </svg>
         <div className="text-xs mt-1" style={{ color: "rgba(242,243,245,0.40)", fontFamily: "var(--font-ibm-plex-mono)" }}>68 / 100</div>
       </div>
