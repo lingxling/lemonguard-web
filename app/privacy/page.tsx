@@ -10,19 +10,6 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <LegalPage title="Privacy Policy" updated="May 17, 2026">
-      {/* DRAFT NOTICE — remove this block once an attorney has reviewed the policy. */}
-      <div
-        className="mb-10 rounded-xl p-4 text-sm leading-relaxed"
-        style={{ background: "var(--flag-s)", border: "1px solid var(--flag)", color: "var(--text2)" }}
-      >
-        <strong style={{ color: "var(--text)" }}>Draft notice:</strong> This page is a
-        working draft and has not yet been reviewed by a lawyer. It must be
-        confirmed against the app&rsquo;s actual data practices and reviewed by a
-        licensed attorney before launch. Your App Store Connect &ldquo;App
-        Privacy&rdquo; answers must match this policy. (Delete this block before
-        publishing.)
-      </div>
-
       <LegalSection heading="1. Who We Are">
         <p>
           LemonGuard (&ldquo;<strong>we</strong>&rdquo;, &ldquo;<strong>us</strong>&rdquo;,

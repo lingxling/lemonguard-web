@@ -10,17 +10,6 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <LegalPage title="Terms of Service" updated="May 17, 2026">
-      {/* DRAFT NOTICE — remove this block once an attorney has reviewed the Terms. */}
-      <div
-        className="mb-10 rounded-xl p-4 text-sm leading-relaxed"
-        style={{ background: "var(--flag-s)", border: "1px solid var(--flag)", color: "var(--text2)" }}
-      >
-        <strong style={{ color: "var(--text)" }}>Draft notice:</strong> This page is a
-        working draft and has not yet been reviewed by a lawyer. Placeholders in
-        brackets must be completed, and the Terms should be reviewed by a
-        licensed attorney before launch. (Delete this block before publishing.)
-      </div>
-
       <LegalSection heading="1. Agreement to These Terms">
         <p>
           These Terms of Service (&ldquo;<strong>Terms</strong>&rdquo;) are a

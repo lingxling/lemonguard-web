@@ -2,13 +2,11 @@
 
 **Last updated: May 17, 2026**
 
-> **DRAFT — NOT YET LEGALLY REVIEWED.** This document is a working draft prepared
-> from a standard mobile-app Privacy Policy template. It is **not legal advice**.
-> Before publishing, have a licensed attorney confirm it accurately describes
-> the app's actual data practices and complies with applicable privacy laws
-> (including, where relevant, the CCPA/CPRA, GDPR, and Apple App Store / Google
-> Play requirements). The "App Privacy" answers you give in App Store Connect
-> must match this policy.
+> **Note:** This document was prepared from a standard mobile-app Privacy
+> Policy template and is published as-is for the V1.0 launch. It has **not**
+> been reviewed by a lawyer. A legal review is tracked as a post-V1.0 task —
+> see TODO.md. The "App Privacy" answers given in App Store Connect must stay
+> consistent with this policy.
 
 ---
 

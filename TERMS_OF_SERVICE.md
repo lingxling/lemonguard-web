@@ -2,12 +2,12 @@
 
 **Last updated: May 17, 2026**
 
-> **DRAFT — NOT YET LEGALLY REVIEWED.** This document is a working draft prepared
-> from a standard mobile-app Terms of Service template. It is **not legal advice**.
-> Before publishing, have a licensed attorney review it — especially the
-> *Governing Law*, *Limitation of Liability*, *Arbitration / Dispute Resolution*,
-> and *Disclaimer of Warranties* sections, and confirm it complies with the
-> consumer-protection laws of every jurisdiction where the app is offered.
+> **Note:** This document was prepared from a standard mobile-app Terms of
+> Service template and is published as-is for the V1.0 launch. It has **not**
+> been reviewed by a lawyer. A legal review is tracked as a post-V1.0 task —
+> see TODO.md. When that review happens, pay particular attention to the
+> *Governing Law*, *Limitation of Liability*, *Arbitration / Dispute
+> Resolution*, and *Disclaimer of Warranties* sections.
 
 ---
 
