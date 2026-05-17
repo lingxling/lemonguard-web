@@ -10,24 +10,30 @@ export default function DownloadCTA() {
         <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: "var(--amber)", fontFamily: "var(--font-ibm-plex-mono)" }}>
           Ready to inspect?
         </p>
-        <h2 className="text-3xl md:text-5xl font-bold mb-5 leading-tight" style={{ color: "var(--text)" }}>
-          Your first inspection<br />is free.
+        <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight" style={{ color: "var(--text)" }}>
+          Your first inspection<br />is <span style={{ color: "var(--amber)" }}>free.</span>
         </h2>
-        <p className="text-base leading-relaxed mb-10" style={{ color: "var(--text2)" }}>
-          Download LemonGuard and walk through your first full inspection at no charge. No account required. Works offline.
-        </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <a href={STORE_LINKS.appStore} className="flex items-center gap-3 px-7 py-4 rounded-2xl font-semibold text-sm transition-all hover:scale-[1.03]"
+          <a href={STORE_LINKS.appStore} className="flex items-center gap-3 px-7 py-4 rounded-2xl font-semibold text-sm cursor-pointer transition-all hover:scale-[1.03]"
             style={{ background: "var(--amber)", color: "#0E0F11" }}>
             <AppleIcon />
             Download on App Store
           </a>
-          <a href={STORE_LINKS.playStore} className="flex items-center gap-3 px-7 py-4 rounded-2xl font-semibold text-sm transition-all hover:scale-[1.03]"
+          <a href={STORE_LINKS.playStore} className="flex items-center gap-3 px-7 py-4 rounded-2xl font-semibold text-sm cursor-pointer transition-all hover:scale-[1.03]"
             style={{ background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border2)" }}>
             <AndroidIcon />
             Get it on Google Play
           </a>
+        </div>
+
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-8">
+          {["No account required", "Works offline", "iOS & Android"].map((chip) => (
+            <span key={chip} className="flex items-center gap-2 text-xs" style={{ color: "var(--text3)", fontFamily: "var(--font-ibm-plex-mono)" }}>
+              <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "var(--pass)" }} />
+              {chip}
+            </span>
+          ))}
         </div>
       </div>
     </section>

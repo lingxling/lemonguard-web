@@ -42,7 +42,7 @@ export default function Nav() {
           {/* Theme toggle */}
           <button
             onClick={toggleTheme}
-            className="w-9 h-9 rounded-full flex items-center justify-center transition-colors hover:opacity-80"
+            className="w-9 h-9 rounded-full flex items-center justify-center cursor-pointer transition-colors hover:opacity-80"
             style={{ background: "var(--surface2)", border: "1px solid var(--border)" }}
             aria-label="Toggle light/dark mode"
           >
@@ -51,7 +51,7 @@ export default function Nav() {
 
           <a
             href={STORE_LINKS.appStore}
-            className="text-sm font-semibold px-5 py-2 rounded-full transition-opacity hover:opacity-80"
+            className="text-sm font-semibold px-5 py-2 rounded-full cursor-pointer transition-opacity hover:opacity-80"
             style={{ background: "var(--amber)", color: "#0E0F11" }}
           >
             Download Free →

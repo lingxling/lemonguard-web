@@ -83,3 +83,39 @@ body {
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.25s ease, color 0.15s ease;
 }
+
+/* ─── Scroll-reveal ─────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* ─── Legal pages (Terms, Privacy) ──────────────────────── */
+.legal-body ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.legal-body a {
+  color: var(--amber);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.legal-body strong { color: var(--text); }

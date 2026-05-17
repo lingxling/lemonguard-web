@@ -1,19 +1,16 @@
 const PLANS = [
   {
     name: "Free", price: "$0", unit: "first inspection",
-    desc: "Try it before you commit. Full Standard-tier inspection, live score, and PDF export — on your first car.",
     features: ["1 full inspection", "119-item checklist", "Live A–F score", "PDF report export"],
     cta: "Get Started Free", highlight: false,
   },
   {
     name: "7-Day Pass", price: "$1.99", unit: "one-time",
-    desc: "Inspect as many cars as you need for a week. Perfect for a focused weekend of shopping.",
     features: ["Unlimited inspections", "All 3 tiers", "Photo evidence", "Multi-car compare", "PDF reports"],
     cta: "Buy 7-Day Pass", highlight: true,
   },
   {
     name: "30-Day Pass", price: "$3.99", unit: "one-time",
-    desc: "A full month of unlimited inspections. Great if you're taking your time finding the right car.",
     features: ["Unlimited inspections", "All 3 tiers", "Photo evidence", "Multi-car compare", "PDF reports"],
     cta: "Buy 30-Day Pass", highlight: false,
   },
@@ -26,12 +23,16 @@ export default function Pricing() {
         <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4 text-center" style={{ color: "var(--amber)", fontFamily: "var(--font-ibm-plex-mono)" }}>
           Pricing
         </p>
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4" style={{ color: "var(--text)" }}>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-3" style={{ color: "var(--text)" }}>
           Pay once. No subscriptions.
         </h2>
-        <p className="text-center max-w-sm mx-auto mb-16 text-base leading-relaxed" style={{ color: "var(--text2)" }}>
-          No auto-renewal. No hidden fees. Pay when you need it.
-        </p>
+        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-16">
+          {["No auto-renewal", "No hidden fees", "No account"].map((chip) => (
+            <span key={chip} className="text-xs font-semibold px-3 py-1.5 rounded-full" style={{ background: "var(--surface2)", color: "var(--text2)", border: "1px solid var(--border)", fontFamily: "var(--font-ibm-plex-mono)" }}>
+              {chip}
+            </span>
+          ))}
+        </div>
 
         <div className="grid md:grid-cols-3 gap-6 items-start">
           {PLANS.map((plan) => (
@@ -49,7 +50,6 @@ export default function Pricing() {
                   <span className="text-sm" style={{ color: "var(--text3)" }}>/ {plan.unit}</span>
                 </div>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: "var(--text2)" }}>{plan.desc}</p>
               <ul className="flex flex-col gap-2">
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-center gap-2.5 text-sm" style={{ color: "var(--text2)" }}>
@@ -58,7 +58,7 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a href="#" className="mt-auto text-center py-3 rounded-xl text-sm font-semibold transition-opacity hover:opacity-80"
+              <a href="#" className="mt-auto text-center py-3 rounded-xl text-sm font-semibold cursor-pointer transition-opacity hover:opacity-80"
                 style={plan.highlight
                   ? { background: "var(--amber)", color: "#0E0F11" }
                   : { background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border)" }}>

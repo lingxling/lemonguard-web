@@ -12,12 +12,9 @@ export default function AppMockup() {
         <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4 text-center" style={{ color: "var(--amber)", fontFamily: "var(--font-ibm-plex-mono)" }}>
           The App
         </p>
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4" style={{ color: "var(--text)" }}>
-          Built for real inspections
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16" style={{ color: "var(--text)" }}>
+          Built for the parking lot.
         </h2>
-        <p className="text-center max-w-md mx-auto mb-16 text-base leading-relaxed" style={{ color: "var(--text2)" }}>
-          Clean, fast, distraction-free. Designed to work in a parking lot or under a car.
-        </p>
 
         <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
           <PhoneFrame title="Inspection Hub"><HubScreen /></PhoneFrame>
