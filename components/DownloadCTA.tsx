@@ -1,4 +1,4 @@
-import { STORE_LINKS } from "@/lib/constants";
+import { STORE_LINKS, ANDROID_AVAILABLE } from "@/lib/constants";
 
 export default function DownloadCTA() {
   return (
@@ -18,17 +18,20 @@ export default function DownloadCTA() {
           <a href={STORE_LINKS.appStore} className="flex items-center gap-3 px-7 py-4 rounded-2xl font-semibold text-sm cursor-pointer transition-all hover:scale-[1.03]"
             style={{ background: "var(--amber)", color: "#0E0F11" }}>
             <AppleIcon />
-            Download on App Store
+            Download on the App Store
           </a>
-          <a href={STORE_LINKS.playStore} className="flex items-center gap-3 px-7 py-4 rounded-2xl font-semibold text-sm cursor-pointer transition-all hover:scale-[1.03]"
-            style={{ background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border2)" }}>
-            <AndroidIcon />
-            Get it on Google Play
-          </a>
+          {/* Google Play button — shown once ANDROID_AVAILABLE is true. */}
+          {ANDROID_AVAILABLE && (
+            <a href={STORE_LINKS.playStore} className="flex items-center gap-3 px-7 py-4 rounded-2xl font-semibold text-sm cursor-pointer transition-all hover:scale-[1.03]"
+              style={{ background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border2)" }}>
+              <AndroidIcon />
+              Get it on Google Play
+            </a>
+          )}
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-8">
-          {["No account required", "Works offline", "iOS & Android"].map((chip) => (
+          {["No account required", "Works offline", ANDROID_AVAILABLE ? "iOS & Android" : "For iPhone"].map((chip) => (
             <span key={chip} className="flex items-center gap-2 text-xs" style={{ color: "var(--text3)" }}>
               <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "var(--pass)" }} />
               {chip}

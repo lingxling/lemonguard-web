@@ -1,4 +1,4 @@
-import { STORE_LINKS } from "@/lib/constants";
+import { STORE_LINKS, ANDROID_AVAILABLE } from "@/lib/constants";
 
 export default function Hero() {
   return (
@@ -39,21 +39,24 @@ export default function Hero() {
                 style={{ background: "var(--amber)", color: "#0E0F11", boxShadow: "0 0 32px var(--amber-s)" }}
               >
                 <AppleIcon />
-                App Store
+                Download on the App Store
               </a>
-              <a
-                href={STORE_LINKS.playStore}
-                className="flex items-center gap-3 px-6 py-4 rounded-2xl font-semibold text-sm cursor-pointer transition-all hover:scale-[1.03]"
-                style={{ background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border2)" }}
-              >
-                <AndroidIcon />
-                Google Play
-              </a>
+              {/* Google Play button — shown once ANDROID_AVAILABLE is true. */}
+              {ANDROID_AVAILABLE && (
+                <a
+                  href={STORE_LINKS.playStore}
+                  className="flex items-center gap-3 px-6 py-4 rounded-2xl font-semibold text-sm cursor-pointer transition-all hover:scale-[1.03]"
+                  style={{ background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border2)" }}
+                >
+                  <AndroidIcon />
+                  Google Play
+                </a>
+              )}
             </div>
 
             <p className="mt-5 text-xs flex items-center gap-2" style={{ color: "var(--text4)" }}>
               <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "var(--pass)" }} />
-              First 3 inspections free &nbsp;·&nbsp; iOS &amp; Android &nbsp;·&nbsp; No account required
+              First 3 inspections free &nbsp;·&nbsp; {ANDROID_AVAILABLE ? "iOS & Android" : "For iPhone"} &nbsp;·&nbsp; No account required
             </p>
           </div>
 

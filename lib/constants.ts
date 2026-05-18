@@ -1,3 +1,8 @@
+// LemonGuard ships on the App Store only for now. When the Android build
+// is published, set ANDROID_AVAILABLE to true and fill in playStore — the
+// Google Play buttons and "iOS & Android" copy are gated on this flag.
+export const ANDROID_AVAILABLE = false;
+
 export const STORE_LINKS = {
   appStore: "#",
   playStore: "#",
