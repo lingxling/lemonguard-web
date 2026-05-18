@@ -1,43 +1,8 @@
 @import "tailwindcss";
 
 /* ─── Design tokens ─────────────────────────────────────── */
-/* Dark = default */
+/* Light = default */
 :root {
-  --bg:       #0E0F11;
-  --surface:  #17191C;
-  --surface2: #1F2226;
-  --border:   rgba(255,255,255,0.08);
-  --border2:  rgba(255,255,255,0.14);
-
-  --text:   #F2F3F5;
-  --text2:  rgba(242,243,245,0.62);
-  --text3:  rgba(242,243,245,0.42);
-  --text4:  rgba(242,243,245,0.28);
-
-  --amber:    #EAAA40;
-  --amber-s:  rgba(234,170,64,0.15);
-  --amber-xs: rgba(234,170,64,0.08);
-
-  --pass:  #51C672;
-  --pass-s: rgba(81,198,114,0.18);
-  --flag:  #EDB345;
-  --flag-s: rgba(237,179,69,0.18);
-  --fail:  #F75D59;
-  --fail-s: rgba(247,93,89,0.18);
-
-  --nav-blur-bg: rgba(14,15,17,0.90);
-  --hero-glow: rgba(234,170,64,0.10);
-  --hero-glow2: rgba(0,155,221,0.06);
-  --grid-lines: rgba(242,243,245,1);
-  --score-track: rgba(255,255,255,0.08);
-  --input-bg: rgba(255,255,255,0.04);
-  --photo-border: rgba(255,255,255,0.12);
-  --skip-text: rgba(242,243,245,0.40);
-  --phone-bezel: #0A0B0D;
-}
-
-/* Light override */
-html.light {
   --bg:       #F6F5F2;
   --surface:  #FFFFFF;
   --surface2: #EDECE7;
@@ -69,6 +34,41 @@ html.light {
   --photo-border: rgba(20,20,24,0.12);
   --skip-text: rgba(20,22,26,0.38);
   --phone-bezel: #1A1B1F;
+}
+
+/* Dark override */
+html.dark {
+  --bg:       #0E0F11;
+  --surface:  #17191C;
+  --surface2: #1F2226;
+  --border:   rgba(255,255,255,0.08);
+  --border2:  rgba(255,255,255,0.14);
+
+  --text:   #F2F3F5;
+  --text2:  rgba(242,243,245,0.62);
+  --text3:  rgba(242,243,245,0.42);
+  --text4:  rgba(242,243,245,0.28);
+
+  --amber:    #EAAA40;
+  --amber-s:  rgba(234,170,64,0.15);
+  --amber-xs: rgba(234,170,64,0.08);
+
+  --pass:  #51C672;
+  --pass-s: rgba(81,198,114,0.18);
+  --flag:  #EDB345;
+  --flag-s: rgba(237,179,69,0.18);
+  --fail:  #F75D59;
+  --fail-s: rgba(247,93,89,0.18);
+
+  --nav-blur-bg: rgba(14,15,17,0.90);
+  --hero-glow: rgba(234,170,64,0.10);
+  --hero-glow2: rgba(0,155,221,0.06);
+  --grid-lines: rgba(242,243,245,1);
+  --score-track: rgba(255,255,255,0.08);
+  --input-bg: rgba(255,255,255,0.04);
+  --photo-border: rgba(255,255,255,0.12);
+  --skip-text: rgba(242,243,245,0.40);
+  --phone-bezel: #0A0B0D;
 }
 
 @theme {

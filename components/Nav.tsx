@@ -4,13 +4,14 @@ import { STORE_LINKS } from "@/lib/constants";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
-  const [isLight, setIsLight] = useState(false);
+  // Light is the default theme; only a stored "dark" preference flips it.
+  const [isLight, setIsLight] = useState(true);
 
   useEffect(() => {
     const stored = localStorage.getItem("theme");
-    if (stored === "light") {
-      document.documentElement.classList.add("light");
-      setIsLight(true);
+    if (stored === "dark") {
+      document.documentElement.classList.add("dark");
+      setIsLight(false);
     }
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -20,7 +21,7 @@ export default function Nav() {
   function toggleTheme() {
     const next = !isLight;
     setIsLight(next);
-    document.documentElement.classList.toggle("light", next);
+    document.documentElement.classList.toggle("dark", !next);
     localStorage.setItem("theme", next ? "light" : "dark");
   }
 
