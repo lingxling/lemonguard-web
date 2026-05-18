@@ -5,7 +5,7 @@ const STATS = [
   { value: 112, suffix: "", label: "Inspection Checks" },
   { value: 8,   suffix: "", label: "Categories" },
   { value: 3,   suffix: "", label: "Inspection Tiers" },
-  { value: 30,  suffix: " min", label: "Quick Inspection" },
+  { value: 25,  suffix: " min", label: "Quick Inspection" },
 ];
 
 export default function StatsBar() {
@@ -26,7 +26,7 @@ function Stat({ value, suffix, label }: { value: number; suffix: string; label: 
   const { ref, value: shown } = useCountUp(value);
   return (
     <div className="text-center">
-      <div className="text-3xl md:text-4xl font-semibold mb-1" style={{ color: "var(--amber)", fontFamily: "var(--font-ibm-plex-mono)" }}>
+      <div className="text-3xl md:text-4xl font-semibold mb-1" style={{ color: "var(--amber)" }}>
         <span ref={ref}>{shown}</span>{suffix}
       </div>
       <div className="text-sm" style={{ color: "var(--text3)" }}>

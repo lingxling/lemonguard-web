@@ -7,7 +7,7 @@ export default function DownloadCTA() {
         style={{ background: "radial-gradient(ellipse, var(--amber-xs) 0%, transparent 70%)" }} />
 
       <div className="relative z-10 max-w-2xl mx-auto text-center">
-        <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: "var(--amber)", fontFamily: "var(--font-ibm-plex-mono)" }}>
+        <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: "var(--amber)" }}>
           Ready to inspect?
         </p>
         <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight" style={{ color: "var(--text)" }}>
@@ -29,7 +29,7 @@ export default function DownloadCTA() {
 
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-8">
           {["No account required", "Works offline", "iOS & Android"].map((chip) => (
-            <span key={chip} className="flex items-center gap-2 text-xs" style={{ color: "var(--text3)", fontFamily: "var(--font-ibm-plex-mono)" }}>
+            <span key={chip} className="flex items-center gap-2 text-xs" style={{ color: "var(--text3)" }}>
               <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "var(--pass)" }} />
               {chip}
             </span>

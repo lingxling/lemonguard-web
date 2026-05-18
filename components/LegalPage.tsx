@@ -26,7 +26,7 @@ export default function LegalPage({
         <h1 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "var(--text)" }}>
           {title}
         </h1>
-        <p className="text-sm mb-12" style={{ color: "var(--text3)", fontFamily: "var(--font-ibm-plex-mono)" }}>
+        <p className="text-sm mb-12" style={{ color: "var(--text3)" }}>
           Last updated: {updated}
         </p>
         {children}
@@ -43,7 +43,7 @@ export default function LegalPage({
           <Link href="/privacy" className="text-sm cursor-pointer transition-opacity hover:opacity-70" style={{ color: "var(--text3)" }}>
             Privacy
           </Link>
-          <span className="text-sm" style={{ color: "var(--text4)", fontFamily: "var(--font-ibm-plex-mono)" }}>
+          <span className="text-sm" style={{ color: "var(--text4)" }}>
             © 2025 LemonGuard
           </span>
         </div>

@@ -21,7 +21,7 @@ export default function Features() {
   return (
     <section className="py-24 px-6" style={{ background: "var(--bg)" }}>
       <div className="max-w-6xl mx-auto">
-        <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4 text-center" style={{ color: "var(--amber)", fontFamily: "var(--font-ibm-plex-mono)" }}>
+        <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4 text-center" style={{ color: "var(--amber)" }}>
           8 Categories · 112 Checks
         </p>
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16" style={{ color: "var(--text)" }}>
@@ -39,7 +39,7 @@ export default function Features() {
                 {cat.icon}
               </div>
               <div className="font-semibold text-sm" style={{ color: "var(--text)" }}>{cat.name}</div>
-              <div className="text-xs font-bold px-2.5 py-1 rounded-full" style={{ background: "var(--amber-xs)", color: "var(--amber)", fontFamily: "var(--font-ibm-plex-mono)" }}>
+              <div className="text-xs font-bold px-2.5 py-1 rounded-full" style={{ background: "var(--amber-xs)", color: "var(--amber)" }}>
                 {cat.items} checks
               </div>
             </div>

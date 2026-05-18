@@ -1,6 +1,12 @@
+// Figures below are the repair-cost ranges LemonGuard's own checklist assigns
+// to these faults (see assets/checklist_items.json — e.g. chassis frame
+// UND_006 $2k–$10k, floor-pan rust UND_003 $500–$3k). The odometer card shows
+// the mileage gap, not a dollar cost: rollback makes you OVERPAY for a
+// worn-out car — it isn't a repair you can price.
 const PAINS = [
   {
-    cost: "$3,500",
+    cost: "up to $10k",
+    costNote: "frame & floor-pan rust repair",
     label: "Hidden rust & flood damage",
     note: "Under panels. Invisible on a test drive.",
     icon: (
@@ -11,7 +17,8 @@ const PAINS = [
     ),
   },
   {
-    cost: "$2,000",
+    cost: "+70k mi",
+    costNote: "you overpay for the wear",
     label: "Odometer rollback",
     note: "You pay for a 60k car. It has 130k.",
     icon: (
@@ -21,7 +28,8 @@ const PAINS = [
     ),
   },
   {
-    cost: "$5,000+",
+    cost: "$2k–$10k",
+    costNote: "structural frame repair",
     label: "Undisclosed accident",
     note: "A repaired wreck sold as clean.",
     icon: (
@@ -37,7 +45,7 @@ export default function Problem() {
   return (
     <section className="py-24 px-6" style={{ background: "var(--bg)" }}>
       <div className="max-w-6xl mx-auto">
-        <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4 text-center" style={{ color: "var(--fail)", fontFamily: "var(--font-ibm-plex-mono)" }}>
+        <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4 text-center" style={{ color: "var(--fail)" }}>
           What a bad car costs you
         </p>
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 leading-tight" style={{ color: "var(--text)" }}>
@@ -49,13 +57,16 @@ export default function Problem() {
         <div className="grid md:grid-cols-3 gap-6">
           {PAINS.map((p) => (
             <div key={p.label} className="p-7 rounded-2xl flex flex-col gap-4" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
-              <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: "var(--fail-s)", color: "var(--fail)" }}>
+              <div className="flex items-start justify-between">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: "var(--fail-s)", color: "var(--fail)" }}>
                   {p.icon}
                 </div>
-                <span className="text-3xl md:text-4xl font-bold" style={{ color: "var(--fail)", fontFamily: "var(--font-ibm-plex-mono)" }}>
-                  {p.cost}
-                </span>
+                <div className="text-right">
+                  <div className="text-2xl md:text-3xl font-bold leading-tight" style={{ color: "var(--fail)" }}>
+                    {p.cost}
+                  </div>
+                  <div className="text-[11px] mt-0.5" style={{ color: "var(--text4)" }}>{p.costNote}</div>
+                </div>
               </div>
               <div>
                 <h3 className="font-semibold text-base mb-1" style={{ color: "var(--text)" }}>{p.label}</h3>
@@ -66,7 +77,11 @@ export default function Problem() {
         </div>
 
         <p className="text-center mt-12 text-base font-medium" style={{ color: "var(--text2)" }}>
-          A 30-minute inspection costs you nothing. Skipping it can cost everything.
+          A 25-minute inspection costs you nothing. Skipping it can cost everything.
+        </p>
+        <p className="text-center mt-3 text-xs" style={{ color: "var(--text4)" }}>
+          Repair ranges reflect LemonGuard&rsquo;s checklist estimates. Actual
+          costs vary by vehicle, region, and severity.
         </p>
       </div>
     </section>

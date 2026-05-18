@@ -16,7 +16,7 @@ export default function Hero() {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px" style={{ background: "var(--amber)" }} />
-              <p className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "var(--amber)", fontFamily: "var(--font-ibm-plex-mono)" }}>
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "var(--amber)" }}>
                 Used Car Inspection App
               </p>
             </div>
@@ -29,7 +29,7 @@ export default function Hero() {
 
             {/* One punchy line, not a paragraph */}
             <p className="text-xl md:text-2xl font-medium mb-8" style={{ color: "var(--text2)" }}>
-              Inspect it like a pro in 30 minutes. Walk away — or knock <span style={{ color: "var(--text)" }}>$1,000s</span> off the price.
+              Inspect it like a pro in 25 minutes. Walk away — or knock <span style={{ color: "var(--text)" }}>$1,000s</span> off the price.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -51,7 +51,7 @@ export default function Hero() {
               </a>
             </div>
 
-            <p className="mt-5 text-xs flex items-center gap-2" style={{ color: "var(--text4)", fontFamily: "var(--font-ibm-plex-mono)" }}>
+            <p className="mt-5 text-xs flex items-center gap-2" style={{ color: "var(--text4)" }}>
               <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "var(--pass)" }} />
               First 3 inspections free &nbsp;·&nbsp; iOS &amp; Android &nbsp;·&nbsp; No account required
             </p>
@@ -82,10 +82,10 @@ function ScoreCard() {
     >
       <div className="flex items-center justify-between">
         <div>
-          <div className="text-xs" style={{ color: "var(--text3)", fontFamily: "var(--font-ibm-plex-mono)" }}>2021 Honda</div>
+          <div className="text-xs" style={{ color: "var(--text3)" }}>2021 Honda</div>
           <div className="font-semibold text-base" style={{ color: "var(--text)" }}>Accord Sport</div>
         </div>
-        <div className="text-xs px-2.5 py-1 rounded-full font-semibold" style={{ background: "var(--amber-s)", color: "var(--amber)", fontFamily: "var(--font-ibm-plex-mono)" }}>
+        <div className="text-xs px-2.5 py-1 rounded-full font-semibold" style={{ background: "var(--amber-s)", color: "var(--amber)" }}>
           Standard
         </div>
       </div>
@@ -94,9 +94,11 @@ function ScoreCard() {
         <svg width="148" height="148" viewBox="0 0 148 148">
           <circle cx="74" cy="74" r={r} fill="none" stroke="var(--score-track)" strokeWidth="10" />
           <circle cx="74" cy="74" r={r} fill="none" stroke="var(--amber)" strokeWidth="10" strokeLinecap="round" strokeDasharray={circ} strokeDashoffset={circ * (1 - pct)} transform="rotate(-90 74 74)" />
-          <text x="74" y="68" textAnchor="middle" fontSize="38" fontWeight="700" fill="var(--text)" fontFamily="var(--font-ibm-plex-mono)">B</text>
-          <text x="74" y="90" textAnchor="middle" fontSize="12" fill="var(--text3)" fontFamily="var(--font-ibm-plex-mono)">72 / 100</text>
+          <text x="74" y="78" textAnchor="middle" fontSize="44" fontWeight="700" fill="var(--text)">72</text>
         </svg>
+        <p className="text-xs font-semibold tracking-wider uppercase -mt-2" style={{ color: "var(--text3)" }}>
+          Mostly passed, some flags
+        </p>
       </div>
 
       {/* Tally chips — fast to read, no sentences */}
@@ -108,7 +110,7 @@ function ScoreCard() {
 
       <div className="flex items-center justify-between rounded-xl px-4 py-3" style={{ background: "var(--amber-xs)", border: "1px solid var(--amber-s)" }}>
         <span className="text-xs font-medium" style={{ color: "var(--text2)" }}>Est. repair cost</span>
-        <span className="text-sm font-bold" style={{ color: "var(--amber)", fontFamily: "var(--font-ibm-plex-mono)" }}>$1,400&ndash;$2,100</span>
+        <span className="text-sm font-bold" style={{ color: "var(--amber)" }}>$1,400&ndash;$2,100</span>
       </div>
 
       {/* Frames the score as a recap of the user's own inputs, not a verdict. */}
@@ -123,7 +125,7 @@ function ScoreCard() {
 function Tally({ label, count, color, soft }: { label: string; count: number; color: string; soft: string }) {
   return (
     <div className="rounded-xl py-2.5 flex flex-col items-center gap-0.5" style={{ background: soft }}>
-      <span className="text-lg font-bold" style={{ color, fontFamily: "var(--font-ibm-plex-mono)" }}>{count}</span>
+      <span className="text-lg font-bold" style={{ color }}>{count}</span>
       <span className="text-[10px] font-semibold uppercase tracking-wider" style={{ color }}>{label}</span>
     </div>
   );
