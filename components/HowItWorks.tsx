@@ -14,9 +14,9 @@ export default function HowItWorks() {
           <Step num="01" title="Pick a tier">
             <div className="flex flex-col gap-2 w-full">
               {[
-                { name: "Quick", time: "30 min", on: false },
-                { name: "Standard", time: "1 hr", on: true },
-                { name: "Professional", time: "2 hr", on: false },
+                { name: "Quick", time: "~25 min", on: false },
+                { name: "Standard", time: "1–1.5 hr", on: true },
+                { name: "Professional", time: "3–4 hr", on: false },
               ].map((t) => (
                 <div
                   key={t.name}

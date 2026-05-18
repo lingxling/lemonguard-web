@@ -2,7 +2,7 @@
 import { useCountUp } from "@/lib/useReveal";
 
 const STATS = [
-  { value: 119, suffix: "", label: "Inspection Checks" },
+  { value: 112, suffix: "", label: "Inspection Checks" },
   { value: 8,   suffix: "", label: "Categories" },
   { value: 3,   suffix: "", label: "Inspection Tiers" },
   { value: 30,  suffix: " min", label: "Quick Inspection" },

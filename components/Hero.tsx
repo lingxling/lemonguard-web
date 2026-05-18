@@ -53,7 +53,7 @@ export default function Hero() {
 
             <p className="mt-5 text-xs flex items-center gap-2" style={{ color: "var(--text4)", fontFamily: "var(--font-ibm-plex-mono)" }}>
               <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "var(--pass)" }} />
-              First inspection free &nbsp;·&nbsp; iOS &amp; Android &nbsp;·&nbsp; No account required
+              First 3 inspections free &nbsp;·&nbsp; iOS &amp; Android &nbsp;·&nbsp; No account required
             </p>
           </div>
 
@@ -101,9 +101,9 @@ function ScoreCard() {
 
       {/* Tally chips — fast to read, no sentences */}
       <div className="grid grid-cols-3 gap-2">
-        <Tally label="Pass" count={84} color="var(--pass)" soft="var(--pass-s)" />
-        <Tally label="Flag" count={9} color="var(--flag)" soft="var(--flag-s)" />
-        <Tally label="Fail" count={4} color="var(--fail)" soft="var(--fail-s)" />
+        <Tally label="Pass" count={70} color="var(--pass)" soft="var(--pass-s)" />
+        <Tally label="Flag" count={11} color="var(--flag)" soft="var(--flag-s)" />
+        <Tally label="Fail" count={6} color="var(--fail)" soft="var(--fail-s)" />
       </div>
 
       <div className="flex items-center justify-between rounded-xl px-4 py-3" style={{ background: "var(--amber-xs)", border: "1px solid var(--amber-s)" }}>

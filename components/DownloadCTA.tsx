@@ -11,7 +11,7 @@ export default function DownloadCTA() {
           Ready to inspect?
         </p>
         <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight" style={{ color: "var(--text)" }}>
-          Your first inspection<br />is <span style={{ color: "var(--amber)" }}>free.</span>
+          Your first 3 inspections<br />are <span style={{ color: "var(--amber)" }}>free.</span>
         </h2>
 
         <div className="flex flex-wrap items-center justify-center gap-4">

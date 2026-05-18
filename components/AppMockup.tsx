@@ -102,7 +102,7 @@ function ItemScreen() {
       </div>
 
       <div className="p-4 rounded-2xl" style={{ background: "#17191C", border: "1px solid rgba(255,255,255,0.08)" }}>
-        <div className="text-xs font-semibold mb-2" style={{ color: "#EAAA40", fontFamily: "var(--font-ibm-plex-mono)" }}>ITEM 7 OF 20</div>
+        <div className="text-xs font-semibold mb-2" style={{ color: "#EAAA40", fontFamily: "var(--font-ibm-plex-mono)" }}>ITEM 7 OF 18</div>
         <div className="font-semibold text-sm mb-2" style={{ color: "#F2F3F5" }}>Panel gaps consistent all around?</div>
         <p className="text-xs leading-relaxed" style={{ color: "rgba(242,243,245,0.50)" }}>
           Uneven gaps between panels can indicate prior accident damage or poor repair work. Run your finger along each gap.
@@ -137,10 +137,10 @@ function ItemScreen() {
 
       <div>
         <div className="flex justify-between text-xs mb-1.5" style={{ color: "rgba(242,243,245,0.40)", fontFamily: "var(--font-ibm-plex-mono)" }}>
-          <span>Progress</span><span>7 / 20</span>
+          <span>Progress</span><span>7 / 18</span>
         </div>
         <div className="h-1 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.08)" }}>
-          <div className="h-full rounded-full" style={{ width: "35%", background: "#EAAA40" }} />
+          <div className="h-full rounded-full" style={{ width: "39%", background: "#EAAA40" }} />
         </div>
       </div>
     </div>

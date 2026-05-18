@@ -1,18 +1,13 @@
 const PLANS = [
   {
-    name: "Free", price: "$0", unit: "first inspection",
-    features: ["1 full inspection", "119-item checklist", "Live A–F score", "PDF report export"],
+    name: "Free", price: "$0", unit: "first 3 inspections",
+    features: ["3 full inspections", "112-item checklist", "Live A–F score", "PDF report export"],
     cta: "Get Started Free", highlight: false,
   },
   {
-    name: "7-Day Pass", price: "$1.99", unit: "one-time",
-    features: ["Unlimited inspections", "All 3 tiers", "Photo evidence", "Multi-car compare", "PDF reports"],
-    cta: "Buy 7-Day Pass", highlight: true,
-  },
-  {
-    name: "30-Day Pass", price: "$3.99", unit: "one-time",
-    features: ["Unlimited inspections", "All 3 tiers", "Photo evidence", "Multi-car compare", "PDF reports"],
-    cta: "Buy 30-Day Pass", highlight: false,
+    name: "Lifetime Unlock", price: "$7.99", unit: "one-time",
+    features: ["Unlimited inspections", "All 3 tiers", "Photo evidence", "Multi-car compare", "All future updates"],
+    cta: "Unlock for $7.99", highlight: true,
   },
 ];
 
@@ -34,7 +29,7 @@ export default function Pricing() {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 items-start">
+        <div className="grid md:grid-cols-2 gap-6 items-start max-w-2xl mx-auto">
           {PLANS.map((plan) => (
             <div key={plan.name} className="p-6 rounded-2xl flex flex-col gap-5"
               style={{ background: plan.highlight ? "var(--amber-s)" : "var(--surface)", border: plan.highlight ? "1.5px solid var(--amber)" : "1px solid var(--border)" }}>

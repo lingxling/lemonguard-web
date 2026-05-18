@@ -90,7 +90,7 @@ export default function TermsPage() {
         <p>
           The Service offers an optional one-time, non-subscription in-app
           purchase that unlocks unlimited inspections and additional features.
-          The first inspection is free.
+          The first three inspections are free.
         </p>
         <ul>
           <li><strong>All purchases are processed by the Apple App Store</strong> (and, where offered, the Google Play Store). We do not collect or store your payment-card details.</li>
