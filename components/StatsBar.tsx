@@ -2,17 +2,16 @@
 import { useCountUp } from "@/lib/useReveal";
 
 const STATS = [
-  { value: 112, suffix: "", label: "Inspection Checks" },
-  { value: 8,   suffix: "", label: "Categories" },
-  { value: 3,   suffix: "", label: "Inspection Tiers" },
-  { value: 25,  suffix: " min", label: "Quick Inspection" },
+  { value: 25, suffix: " min", label: "Quick scan" },
+  { value: 112, suffix: "", label: "Inspection checks" },
+  { value: 8, suffix: "", label: "Categories" },
 ];
 
 export default function StatsBar() {
   return (
-    <div style={{ background: "var(--surface)", borderBottom: "1px solid var(--border)" }}>
+    <div style={{ background: "var(--surface)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
       <div className="max-w-6xl mx-auto px-6 py-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-3 gap-6">
           {STATS.map((s) => (
             <Stat key={s.label} {...s} />
           ))}
