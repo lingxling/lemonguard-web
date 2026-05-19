@@ -1,8 +1,8 @@
-import { STORE_LINKS, ANDROID_AVAILABLE } from "@/lib/constants";
+import { STORE_LINKS, ANDROID_AVAILABLE, IOS_AVAILABLE } from "@/lib/constants";
 
 export default function DownloadCTA() {
   return (
-    <section className="py-24 px-6 relative overflow-hidden" style={{ background: "var(--surface)" }}>
+    <section id="download" className="py-24 px-6 relative overflow-hidden scroll-mt-16" style={{ background: "var(--surface)" }}>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full pointer-events-none"
         style={{ background: "radial-gradient(ellipse, var(--amber-xs) 0%, transparent 70%)" }} />
 
@@ -15,18 +15,34 @@ export default function DownloadCTA() {
         </h2>
 
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <a href={STORE_LINKS.appStore} className="flex items-center gap-3 px-7 py-4 rounded-2xl font-semibold text-sm cursor-pointer transition-all hover:scale-[1.03]"
-            style={{ background: "var(--amber)", color: "#0E0F11" }}>
-            <AppleIcon />
-            Download on the App Store
-          </a>
-          {/* Google Play button — shown once ANDROID_AVAILABLE is true. */}
-          {ANDROID_AVAILABLE && (
+          {/* Live App Store link once IOS_AVAILABLE is true; until then a
+              disabled "Coming soon" state so we never ship a dead link. */}
+          {IOS_AVAILABLE ? (
+            <a href={STORE_LINKS.appStore} className="flex items-center gap-3 px-7 py-4 rounded-2xl font-semibold text-sm cursor-pointer transition-all hover:scale-[1.03]"
+              style={{ background: "var(--amber)", color: "#0E0F11" }}>
+              <AppleIcon />
+              Download on the App Store
+            </a>
+          ) : (
+            <span className="flex items-center gap-3 px-7 py-4 rounded-2xl font-semibold text-sm cursor-not-allowed"
+              style={{ background: "var(--amber)", color: "#0E0F11", opacity: 0.55 }} aria-disabled="true">
+              <AppleIcon />
+              App Store &mdash; Coming soon
+            </span>
+          )}
+          {/* Android button — always visible, disabled until ANDROID_AVAILABLE. */}
+          {ANDROID_AVAILABLE ? (
             <a href={STORE_LINKS.playStore} className="flex items-center gap-3 px-7 py-4 rounded-2xl font-semibold text-sm cursor-pointer transition-all hover:scale-[1.03]"
               style={{ background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border2)" }}>
               <AndroidIcon />
               Get it on Google Play
             </a>
+          ) : (
+            <span className="flex items-center gap-3 px-7 py-4 rounded-2xl font-semibold text-sm cursor-not-allowed"
+              style={{ background: "var(--surface2)", color: "var(--text3)", border: "1px solid var(--border2)", opacity: 0.65 }} aria-disabled="true">
+              <AndroidIcon />
+              Android &mdash; Coming soon
+            </span>
           )}
         </div>
 

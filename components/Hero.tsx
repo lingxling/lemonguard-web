@@ -1,4 +1,4 @@
-import { STORE_LINKS, ANDROID_AVAILABLE } from "@/lib/constants";
+import { STORE_LINKS, ANDROID_AVAILABLE, IOS_AVAILABLE } from "@/lib/constants";
 
 export default function Hero() {
   return (
@@ -33,16 +33,29 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <a
-                href={STORE_LINKS.appStore}
-                className="flex items-center gap-3 px-6 py-4 rounded-2xl font-semibold text-sm cursor-pointer transition-all hover:scale-[1.03]"
-                style={{ background: "var(--amber)", color: "#0E0F11", boxShadow: "0 0 32px var(--amber-s)" }}
-              >
-                <AppleIcon />
-                Download on the App Store
-              </a>
-              {/* Google Play button — shown once ANDROID_AVAILABLE is true. */}
-              {ANDROID_AVAILABLE && (
+              {/* Live App Store link once IOS_AVAILABLE is true; until then a
+                  disabled "Coming soon" state so we never ship a dead link. */}
+              {IOS_AVAILABLE ? (
+                <a
+                  href={STORE_LINKS.appStore}
+                  className="flex items-center gap-3 px-6 py-4 rounded-2xl font-semibold text-sm cursor-pointer transition-all hover:scale-[1.03]"
+                  style={{ background: "var(--amber)", color: "#0E0F11", boxShadow: "0 0 32px var(--amber-s)" }}
+                >
+                  <AppleIcon />
+                  Download on the App Store
+                </a>
+              ) : (
+                <span
+                  className="flex items-center gap-3 px-6 py-4 rounded-2xl font-semibold text-sm cursor-not-allowed"
+                  style={{ background: "var(--amber)", color: "#0E0F11", boxShadow: "0 0 32px var(--amber-s)", opacity: 0.55 }}
+                  aria-disabled="true"
+                >
+                  <AppleIcon />
+                  App Store &mdash; Coming soon
+                </span>
+              )}
+              {/* Android button — always visible, disabled until ANDROID_AVAILABLE. */}
+              {ANDROID_AVAILABLE ? (
                 <a
                   href={STORE_LINKS.playStore}
                   className="flex items-center gap-3 px-6 py-4 rounded-2xl font-semibold text-sm cursor-pointer transition-all hover:scale-[1.03]"
@@ -51,6 +64,15 @@ export default function Hero() {
                   <AndroidIcon />
                   Google Play
                 </a>
+              ) : (
+                <span
+                  className="flex items-center gap-3 px-6 py-4 rounded-2xl font-semibold text-sm cursor-not-allowed"
+                  style={{ background: "var(--surface2)", color: "var(--text3)", border: "1px solid var(--border2)", opacity: 0.65 }}
+                  aria-disabled="true"
+                >
+                  <AndroidIcon />
+                  Android &mdash; Coming soon
+                </span>
               )}
             </div>
 

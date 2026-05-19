@@ -11,10 +11,11 @@ export default function Footer() {
             <p className="text-sm" style={{ color: "var(--text3)" }}>Inspect smarter. Negotiate better.</p>
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+            <a href="mailto:support@lemonguard.app" className="text-sm cursor-pointer transition-opacity hover:opacity-70" style={{ color: "var(--text3)" }}>Contact</a>
             <a href="/privacy" className="text-sm cursor-pointer transition-opacity hover:opacity-70" style={{ color: "var(--text3)" }}>Privacy</a>
             <a href="/terms" className="text-sm cursor-pointer transition-opacity hover:opacity-70" style={{ color: "var(--text3)" }}>Terms</a>
-            <span className="text-sm" style={{ color: "var(--text4)" }}>© 2025 LemonGuard</span>
+            <span className="text-sm" style={{ color: "var(--text4)" }}>© 2026 LemonGuard</span>
           </div>
         </div>
 

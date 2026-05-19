@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { STORE_LINKS } from "@/lib/constants";
+import { IOS_AVAILABLE } from "@/lib/constants";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -50,12 +50,14 @@ export default function Nav() {
             {isLight ? <MoonIcon /> : <SunIcon />}
           </button>
 
+          {/* Scrolls to the #download section, which holds the per-platform
+              (App Store / Android) buttons. One nav button, two platforms below. */}
           <a
-            href={STORE_LINKS.appStore}
+            href="#download"
             className="text-sm font-semibold px-5 py-2 rounded-full cursor-pointer transition-opacity hover:opacity-80"
             style={{ background: "var(--amber)", color: "#0E0F11" }}
           >
-            Download Free →
+            {IOS_AVAILABLE ? "Download Free →" : "Get the App →"}
           </a>
         </div>
       </div>

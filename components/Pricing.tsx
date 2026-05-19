@@ -62,12 +62,15 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a href="#" className="mt-auto text-center py-3 rounded-xl text-sm font-semibold cursor-pointer transition-opacity hover:opacity-80"
+              {/* CTA is a disabled "Coming soon" state until the app ships;
+                  both tiers unlock inside the app, so there's no web link. */}
+              <span className="mt-auto text-center py-3 rounded-xl text-sm font-semibold cursor-not-allowed"
                 style={plan.highlight
-                  ? { background: "var(--amber)", color: "#0E0F11" }
-                  : { background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border)" }}>
-                {plan.cta}
-              </a>
+                  ? { background: "var(--amber)", color: "#0E0F11", opacity: 0.55 }
+                  : { background: "var(--surface2)", color: "var(--text3)", border: "1px solid var(--border)", opacity: 0.65 }}
+                aria-disabled="true">
+                Coming soon
+              </span>
             </div>
           ))}
         </div>
