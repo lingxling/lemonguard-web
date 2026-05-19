@@ -178,15 +178,21 @@ export default function TermsPage() {
 
       <LegalSection heading="12. Governing Law and Dispute Resolution">
         <p>
-          These Terms are governed by the laws of the State of{" "}
-          <strong>Delaware</strong> and the federal laws of the United States,
-          without regard to its conflict-of-laws rules.
+          These Terms are governed by the laws applicable at the place of
+          business of the developer who provides the Service, without regard to
+          conflict-of-laws rules. Nothing in this section deprives you of the
+          protection of any mandatory consumer-protection laws of your country
+          or place of residence.
         </p>
         <p>
-          Any dispute arising out of or relating to these Terms or the Service
-          will be resolved exclusively in the state or federal courts located in{" "}
-          <strong>New Castle County, Delaware</strong>, and you consent to the
-          personal jurisdiction of those courts.
+          If a dispute arises out of or relating to these Terms or the Service,
+          you agree to first contact us at{" "}
+          <strong>support@lemonguard.app</strong> and attempt to resolve it
+          informally. Most concerns can be settled this way. Any dispute that
+          cannot be resolved informally will be subject to the courts having
+          jurisdiction at the developer&apos;s place of business, unless
+          applicable law in your place of residence entitles you to bring the
+          matter before your local courts.
         </p>
       </LegalSection>
 
