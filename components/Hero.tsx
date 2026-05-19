@@ -119,7 +119,7 @@ function ScoreCard() {
         <svg width="148" height="148" viewBox="0 0 148 148">
           <circle cx="74" cy="74" r={r} fill="none" stroke="var(--score-track)" strokeWidth="10" />
           <circle cx="74" cy="74" r={r} fill="none" stroke="var(--amber)" strokeWidth="10" strokeLinecap="round" strokeDasharray={circ} strokeDashoffset={circ * (1 - pct)} transform="rotate(-90 74 74)" />
-          <text x="74" y="78" textAnchor="middle" fontSize="44" fontWeight="700" fill="var(--text)">72</text>
+          <text x="74" y="74" textAnchor="middle" dominantBaseline="central" fontSize="44" fontWeight="700" fill="var(--flag)">72</text>
         </svg>
         <p className="text-xs font-semibold tracking-wider uppercase -mt-2" style={{ color: "var(--text3)" }}>
           Mostly passed, some flags
