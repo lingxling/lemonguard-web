@@ -1,8 +1,11 @@
+"use client";
+import { useCountUp } from "@/lib/useReveal";
+
 const STATS = [
-  { value: "119", label: "Inspection Checks" },
-  { value: "8",   label: "Categories" },
-  { value: "3",   label: "Inspection Tiers" },
-  { value: "A–F", label: "Live Score" },
+  { value: 112, suffix: "", label: "Inspection Checks" },
+  { value: 8,   suffix: "", label: "Categories" },
+  { value: 3,   suffix: "", label: "Inspection Tiers" },
+  { value: 25,  suffix: " min", label: "Quick Inspection" },
 ];
 
 export default function StatsBar() {
@@ -11,16 +14,23 @@ export default function StatsBar() {
       <div className="max-w-6xl mx-auto px-6 py-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {STATS.map((s) => (
-            <div key={s.label} className="text-center">
-              <div className="text-3xl md:text-4xl font-semibold mb-1" style={{ color: "var(--amber)", fontFamily: "var(--font-ibm-plex-mono)" }}>
-                {s.value}
-              </div>
-              <div className="text-sm" style={{ color: "var(--text3)" }}>
-                {s.label}
-              </div>
-            </div>
+            <Stat key={s.label} {...s} />
           ))}
         </div>
+      </div>
+    </div>
+  );
+}
+
+function Stat({ value, suffix, label }: { value: number; suffix: string; label: string }) {
+  const { ref, value: shown } = useCountUp(value);
+  return (
+    <div className="text-center">
+      <div className="text-3xl md:text-4xl font-semibold mb-1" style={{ color: "var(--amber)" }}>
+        <span ref={ref}>{shown}</span>{suffix}
+      </div>
+      <div className="text-sm" style={{ color: "var(--text3)" }}>
+        {label}
       </div>
     </div>
   );

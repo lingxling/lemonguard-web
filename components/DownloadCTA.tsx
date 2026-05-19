@@ -1,33 +1,58 @@
-import { STORE_LINKS } from "@/lib/constants";
+import { STORE_LINKS, ANDROID_AVAILABLE, IOS_AVAILABLE } from "@/lib/constants";
 
 export default function DownloadCTA() {
   return (
-    <section className="py-24 px-6 relative overflow-hidden" style={{ background: "var(--surface)" }}>
+    <section id="download" className="py-24 px-6 relative overflow-hidden scroll-mt-16" style={{ background: "var(--surface)" }}>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full pointer-events-none"
         style={{ background: "radial-gradient(ellipse, var(--amber-xs) 0%, transparent 70%)" }} />
 
       <div className="relative z-10 max-w-2xl mx-auto text-center">
-        <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: "var(--amber)", fontFamily: "var(--font-ibm-plex-mono)" }}>
+        <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: "var(--amber)" }}>
           Ready to inspect?
         </p>
-        <h2 className="text-3xl md:text-5xl font-bold mb-5 leading-tight" style={{ color: "var(--text)" }}>
-          Your first inspection<br />is free.
+        <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight" style={{ color: "var(--text)" }}>
+          Your first 3 inspections<br />are <span style={{ color: "var(--amber)" }}>free.</span>
         </h2>
-        <p className="text-base leading-relaxed mb-10" style={{ color: "var(--text2)" }}>
-          Download LemonGuard and walk through your first full inspection at no charge. No account required. Works offline.
-        </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <a href={STORE_LINKS.appStore} className="flex items-center gap-3 px-7 py-4 rounded-2xl font-semibold text-sm transition-all hover:scale-[1.03]"
-            style={{ background: "var(--amber)", color: "#0E0F11" }}>
-            <AppleIcon />
-            Download on App Store
-          </a>
-          <a href={STORE_LINKS.playStore} className="flex items-center gap-3 px-7 py-4 rounded-2xl font-semibold text-sm transition-all hover:scale-[1.03]"
-            style={{ background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border2)" }}>
-            <AndroidIcon />
-            Get it on Google Play
-          </a>
+          {/* Live App Store link once IOS_AVAILABLE is true; until then a
+              disabled "Coming soon" state so we never ship a dead link. */}
+          {IOS_AVAILABLE ? (
+            <a href={STORE_LINKS.appStore} className="flex items-center gap-3 px-7 py-4 rounded-2xl font-semibold text-sm cursor-pointer transition-all hover:scale-[1.03]"
+              style={{ background: "var(--amber)", color: "#0E0F11" }}>
+              <AppleIcon />
+              Download on the App Store
+            </a>
+          ) : (
+            <span className="flex items-center gap-3 px-7 py-4 rounded-2xl font-semibold text-sm cursor-not-allowed"
+              style={{ background: "var(--amber)", color: "#0E0F11", opacity: 0.55 }} aria-disabled="true">
+              <AppleIcon />
+              App Store &mdash; Coming soon
+            </span>
+          )}
+          {/* Android button — always visible, disabled until ANDROID_AVAILABLE. */}
+          {ANDROID_AVAILABLE ? (
+            <a href={STORE_LINKS.playStore} className="flex items-center gap-3 px-7 py-4 rounded-2xl font-semibold text-sm cursor-pointer transition-all hover:scale-[1.03]"
+              style={{ background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border2)" }}>
+              <AndroidIcon />
+              Get it on Google Play
+            </a>
+          ) : (
+            <span className="flex items-center gap-3 px-7 py-4 rounded-2xl font-semibold text-sm cursor-not-allowed"
+              style={{ background: "var(--surface2)", color: "var(--text3)", border: "1px solid var(--border2)", opacity: 0.65 }} aria-disabled="true">
+              <AndroidIcon />
+              Android &mdash; Coming soon
+            </span>
+          )}
+        </div>
+
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-8">
+          {["No account required", "Works offline", ANDROID_AVAILABLE ? "iOS & Android" : "For iPhone"].map((chip) => (
+            <span key={chip} className="flex items-center gap-2 text-xs" style={{ color: "var(--text3)" }}>
+              <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "var(--pass)" }} />
+              {chip}
+            </span>
+          ))}
         </div>
       </div>
     </section>

@@ -1,16 +1,17 @@
 "use client";
 import { useState, useEffect } from "react";
-import { STORE_LINKS } from "@/lib/constants";
+import { IOS_AVAILABLE } from "@/lib/constants";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
-  const [isLight, setIsLight] = useState(false);
+  // Light is the default theme; only a stored "dark" preference flips it.
+  const [isLight, setIsLight] = useState(true);
 
   useEffect(() => {
     const stored = localStorage.getItem("theme");
-    if (stored === "light") {
-      document.documentElement.classList.add("light");
-      setIsLight(true);
+    if (stored === "dark") {
+      document.documentElement.classList.add("dark");
+      setIsLight(false);
     }
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -20,7 +21,7 @@ export default function Nav() {
   function toggleTheme() {
     const next = !isLight;
     setIsLight(next);
-    document.documentElement.classList.toggle("light", next);
+    document.documentElement.classList.toggle("dark", !next);
     localStorage.setItem("theme", next ? "light" : "dark");
   }
 
@@ -42,19 +43,21 @@ export default function Nav() {
           {/* Theme toggle */}
           <button
             onClick={toggleTheme}
-            className="w-9 h-9 rounded-full flex items-center justify-center transition-colors hover:opacity-80"
+            className="w-9 h-9 rounded-full flex items-center justify-center cursor-pointer transition-colors hover:opacity-80"
             style={{ background: "var(--surface2)", border: "1px solid var(--border)" }}
             aria-label="Toggle light/dark mode"
           >
             {isLight ? <MoonIcon /> : <SunIcon />}
           </button>
 
+          {/* Scrolls to the #download section, which holds the per-platform
+              (App Store / Android) buttons. One nav button, two platforms below. */}
           <a
-            href={STORE_LINKS.appStore}
-            className="text-sm font-semibold px-5 py-2 rounded-full transition-opacity hover:opacity-80"
+            href="#download"
+            className="text-sm font-semibold px-5 py-2 rounded-full cursor-pointer transition-opacity hover:opacity-80"
             style={{ background: "var(--amber)", color: "#0E0F11" }}
           >
-            Download Free →
+            {IOS_AVAILABLE ? "Download Free →" : "Get the App →"}
           </a>
         </div>
       </div>

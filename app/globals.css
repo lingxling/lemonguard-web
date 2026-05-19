@@ -1,42 +1,8 @@
 @import "tailwindcss";
 
 /* ─── Design tokens ─────────────────────────────────────── */
-/* Dark = default */
+/* Light = default */
 :root {
-  --bg:       #0E0F11;
-  --surface:  #17191C;
-  --surface2: #1F2226;
-  --border:   rgba(255,255,255,0.08);
-  --border2:  rgba(255,255,255,0.14);
-
-  --text:   #F2F3F5;
-  --text2:  rgba(242,243,245,0.62);
-  --text3:  rgba(242,243,245,0.42);
-  --text4:  rgba(242,243,245,0.28);
-
-  --amber:    #EAAA40;
-  --amber-s:  rgba(234,170,64,0.15);
-  --amber-xs: rgba(234,170,64,0.08);
-
-  --pass:  #51C672;
-  --pass-s: rgba(81,198,114,0.18);
-  --flag:  #EDB345;
-  --flag-s: rgba(237,179,69,0.18);
-  --fail:  #F75D59;
-  --fail-s: rgba(247,93,89,0.18);
-
-  --nav-blur-bg: rgba(14,15,17,0.90);
-  --hero-glow: rgba(234,170,64,0.10);
-  --hero-glow2: rgba(0,155,221,0.06);
-  --grid-lines: rgba(242,243,245,1);
-  --score-track: rgba(255,255,255,0.08);
-  --input-bg: rgba(255,255,255,0.04);
-  --photo-border: rgba(255,255,255,0.12);
-  --skip-text: rgba(242,243,245,0.40);
-}
-
-/* Light override */
-html.light {
   --bg:       #F6F5F2;
   --surface:  #FFFFFF;
   --surface2: #EDECE7;
@@ -67,11 +33,46 @@ html.light {
   --input-bg: rgba(20,20,24,0.03);
   --photo-border: rgba(20,20,24,0.12);
   --skip-text: rgba(20,22,26,0.38);
+  --phone-bezel: #1A1B1F;
+}
+
+/* Dark override */
+html.dark {
+  --bg:       #0E0F11;
+  --surface:  #17191C;
+  --surface2: #1F2226;
+  --border:   rgba(255,255,255,0.08);
+  --border2:  rgba(255,255,255,0.14);
+
+  --text:   #F2F3F5;
+  --text2:  rgba(242,243,245,0.62);
+  --text3:  rgba(242,243,245,0.42);
+  --text4:  rgba(242,243,245,0.28);
+
+  --amber:    #EAAA40;
+  --amber-s:  rgba(234,170,64,0.15);
+  --amber-xs: rgba(234,170,64,0.08);
+
+  --pass:  #51C672;
+  --pass-s: rgba(81,198,114,0.18);
+  --flag:  #EDB345;
+  --flag-s: rgba(237,179,69,0.18);
+  --fail:  #F75D59;
+  --fail-s: rgba(247,93,89,0.18);
+
+  --nav-blur-bg: rgba(14,15,17,0.90);
+  --hero-glow: rgba(234,170,64,0.10);
+  --hero-glow2: rgba(0,155,221,0.06);
+  --grid-lines: rgba(242,243,245,1);
+  --score-track: rgba(255,255,255,0.08);
+  --input-bg: rgba(255,255,255,0.04);
+  --photo-border: rgba(255,255,255,0.12);
+  --skip-text: rgba(242,243,245,0.40);
+  --phone-bezel: #0A0B0D;
 }
 
 @theme {
   --font-sans: var(--font-inter);
-  --font-mono: var(--font-ibm-plex-mono);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -83,3 +84,39 @@ body {
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.25s ease, color 0.15s ease;
 }
+
+/* ─── Scroll-reveal ─────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* ─── Legal pages (Terms, Privacy) ──────────────────────── */
+.legal-body ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.legal-body a {
+  color: var(--amber);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.legal-body strong { color: var(--text); }

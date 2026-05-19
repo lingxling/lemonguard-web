@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, IBM_Plex_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,22 +8,15 @@ const inter = Inter({
   display: "swap",
 });
 
-const ibmPlexMono = IBM_Plex_Mono({
-  variable: "--font-ibm-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   title: "LemonGuard — Used Car Inspection App",
   description:
-    "Walk through 119 expert checks, score the car live, and generate a PDF report you can use to negotiate the price down. Available on iOS and Android.",
+    "Walk through 112 expert checks, score the car live, and generate a PDF report you can use to negotiate the price down. Available on the App Store for iPhone.",
   keywords: ["used car inspection", "car buying checklist", "vehicle inspection app", "pre-purchase inspection"],
   openGraph: {
     title: "LemonGuard — Used Car Inspection App",
     description:
-      "Walk through 119 expert checks, score the car live, and generate a PDF report you can use to negotiate the price down.",
+      "Walk through 112 expert checks, score the car live, and generate a PDF report you can use to negotiate the price down.",
     type: "website",
     locale: "en_US",
     siteName: "LemonGuard",
@@ -31,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "LemonGuard — Used Car Inspection App",
-    description: "119 expert checks. Live score. PDF report. Don't get burned buying a used car.",
+    description: "112 expert checks. Live score. PDF report. Don't get burned buying a used car.",
   },
   robots: {
     index: true,
@@ -43,14 +36,13 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "MobileApplication",
   name: "LemonGuard",
-  operatingSystem: "iOS, Android",
+  operatingSystem: "iOS",
   applicationCategory: "UtilitiesApplication",
   description:
-    "A structured used-car inspection app. Walk through 119 expert checks, score the vehicle in real time, and export a PDF report to negotiate the price.",
+    "A structured used-car inspection app. Walk through 112 expert checks, score the vehicle in real time, and export a PDF report to negotiate the price.",
   offers: [
-    { "@type": "Offer", price: "0", priceCurrency: "USD", name: "First inspection free" },
-    { "@type": "Offer", price: "1.99", priceCurrency: "USD", name: "7-day access" },
-    { "@type": "Offer", price: "3.99", priceCurrency: "USD", name: "30-day access" },
+    { "@type": "Offer", price: "0", priceCurrency: "USD", name: "First 3 inspections free" },
+    { "@type": "Offer", price: "7.99", priceCurrency: "USD", name: "Lifetime unlock" },
   ],
 };
 
@@ -60,8 +52,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable}`}>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
+        {/* Apply a stored dark preference before first paint to avoid a
+            flash. Light is the default, so no class means light. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark')}catch(e){}`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
