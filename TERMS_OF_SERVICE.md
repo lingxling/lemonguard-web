@@ -170,18 +170,24 @@ that by their nature should survive termination — including Sections 2, 3, 7, 
 
 ## 12. Governing Law and Dispute Resolution
 
-These Terms are governed by the laws of the State of **Delaware** and the
-federal laws of the United States, without regard to its conflict-of-laws rules.
+These Terms are governed by the laws applicable at the place of business of the
+developer who provides the Service, without regard to conflict-of-laws rules.
+Nothing in this section deprives you of the protection of any mandatory
+consumer-protection laws of your country or place of residence.
 
-Any dispute arising out of or relating to these Terms or the Service will be
-resolved exclusively in the state or federal courts located in **New Castle
-County, Delaware**, and you consent to the personal jurisdiction of those
-courts.
+If a dispute arises out of or relating to these Terms or the Service, you agree
+to first contact us at **support@lemonguard.app** and attempt to resolve it
+informally. Most concerns can be settled this way. Any dispute that cannot be
+resolved informally will be subject to the courts having jurisdiction at the
+developer's place of business, unless applicable law in your place of residence
+entitles you to bring the matter before your local courts.
 
-> **Note for legal review:** Many U.S. consumer apps instead use a binding
-> **arbitration clause** with a **class-action waiver**. Whether to include one
-> — and how to word it — is a decision for your attorney. This draft uses a
-> simple courts-and-venue clause as a placeholder.
+> **Note for legal review:** This is a neutral governing-law and venue clause.
+> The developer's place of business is currently China (individual developer);
+> the Service is offered primarily to an English-speaking, largely overseas
+> audience. The right governing law and dispute-resolution mechanism for that
+> cross-border situation — including whether to use a binding arbitration
+> clause — is a decision for an attorney. See TODO.md.
 
 ## 13. Apple App Store Terms
 
