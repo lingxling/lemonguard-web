@@ -6,10 +6,10 @@ export const ANDROID_AVAILABLE = false;
 // IOS_AVAILABLE gates whether the App Store button is a live link or a
 // disabled "Coming soon" state. Flip to true and set STORE_LINKS.appStore
 // to the real listing URL once the app is published on the App Store.
-export const IOS_AVAILABLE = false;
+export const IOS_AVAILABLE = true;
 
 export const STORE_LINKS = {
-  appStore: "#",
+  appStore: "https://apps.apple.com/us/app/lemon-guard/id6767219162",
   playStore: "#",
 };
 
