@@ -1,5 +1,5 @@
 "use client";
-import { useCountUp } from "@/lib/useReveal";
+import { useCountUp } from "@/lib/useCountUp";
 
 const STATS = [
   { value: 25, suffix: " min", label: "Quick scan" },

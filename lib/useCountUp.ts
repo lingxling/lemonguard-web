@@ -6,36 +6,6 @@ const prefersReducedMotion = () =>
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /**
- * Adds the `is-visible` class to the returned ref's element once it
- * scrolls into view. Pair with the `.reveal` class in globals.css.
- */
-export function useReveal<T extends HTMLElement = HTMLDivElement>() {
-  const ref = useRef<T>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    if (prefersReducedMotion()) {
-      el.classList.add("is-visible");
-      return;
-    }
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("is-visible");
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.15 },
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
-
-  return ref;
-}
-
-/**
  * Counts a number up from 0 to `target` once the returned ref scrolls
  * into view. Honors prefers-reduced-motion (jumps straight to target).
  */

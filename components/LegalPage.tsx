@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { COPYRIGHT } from "@/lib/constants";
 
 /* Shared layout for legal pages (Terms, Privacy). Plain, readable, on-brand. */
 export default function LegalPage({
@@ -44,7 +45,7 @@ export default function LegalPage({
             Privacy
           </Link>
           <span className="text-sm" style={{ color: "var(--text4)" }}>
-            © 2025 LemonGuard
+            {COPYRIGHT}
           </span>
         </div>
       </footer>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { APP_STORE_ID, SITE_URL } from "@/lib/constants";
 import "./globals.css";
 
 const inter = Inter({
@@ -11,10 +12,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "LemonGuard — Used Car Inspection App",
   description:
     "Walk through 112 expert checks, score the car live, and generate a PDF report you can use to negotiate the price down. Available on the App Store for iPhone.",
   keywords: ["used car inspection", "car buying checklist", "vehicle inspection app", "pre-purchase inspection"],
+  // Safari App Store Smart Banner on iOS
+  itunes: {
+    appId: APP_STORE_ID,
+  },
   openGraph: {
     title: "LemonGuard — Used Car Inspection App",
     description:
@@ -22,11 +28,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "LemonGuard",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "LemonGuard — used car inspection app" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "LemonGuard — Used Car Inspection App",
     description: "112 expert checks. Live score. PDF report. Don't get burned buying a used car.",
+    images: ["/og.png"],
   },
   robots: {
     index: true,

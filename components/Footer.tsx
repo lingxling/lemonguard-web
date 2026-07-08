@@ -1,3 +1,5 @@
+import { COPYRIGHT } from "@/lib/constants";
+
 export default function Footer() {
   return (
     <footer className="py-12 px-6" style={{ background: "var(--bg)", borderTop: "1px solid var(--border)" }}>
@@ -15,7 +17,7 @@ export default function Footer() {
             <a href="mailto:support@lemonguard.app" className="text-sm cursor-pointer transition-opacity hover:opacity-70" style={{ color: "var(--text3)" }}>Contact</a>
             <a href="/privacy" className="text-sm cursor-pointer transition-opacity hover:opacity-70" style={{ color: "var(--text3)" }}>Privacy</a>
             <a href="/terms" className="text-sm cursor-pointer transition-opacity hover:opacity-70" style={{ color: "var(--text3)" }}>Terms</a>
-            <span className="text-sm" style={{ color: "var(--text4)" }}>© 2026 LemonGuard</span>
+            <span className="text-sm" style={{ color: "var(--text4)" }}>{COPYRIGHT}</span>
           </div>
         </div>
 
